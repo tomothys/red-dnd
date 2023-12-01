@@ -49,7 +49,7 @@
         .filter(
             (spell) =>
                 classesFilters.length === 0 ||
-                spell.classes.find((magicClass) => classesFilters.includes(magicClass.index))
+                spell.classes.find((charClass) => classesFilters.includes(charClass.index))
         );
 </script>
 
@@ -60,6 +60,7 @@
     >
         <h1 class="text-3xl">Filter</h1>
 
+        <!-- School Filter -->
         <div class="flex flex-col gap-4">
             <h2 class="text-lg">School</h2>
 
@@ -83,6 +84,7 @@
             </ul>
         </div>
 
+        <!-- Spell Level Filter -->
         <div class="flex flex-col gap-4">
             <h2 class="text-lg">Spell Level</h2>
 
@@ -104,6 +106,7 @@
             </ul>
         </div>
 
+        <!-- Classes Filter -->
         <div class="flex flex-col gap-4">
             <h2 class="text-lg">Classes</h2>
 
@@ -182,6 +185,7 @@
                                 <div class="text-xs text-[var(--color-accent)]">
                                     Level: {spell.level !== 0 ? spell.level : "Cantrip"}
                                 </div>
+
                                 <div class="text-xs text-[var(--color-accent)]">
                                     School: {spell.school.name}
                                 </div>
