@@ -1,27 +1,30 @@
 <script>
-    import spells from "$lib/data/spells.json";
-    import schools from "$lib/data/schools.json";
+    export let data;
+
+    // Input search by name
+    /** @type {string} */
+    let searchInput = "";
 
     // Schools
     /** @type {string[]} */
     let setSchoolFilters = [];
 
     // SpellLevels
-    $: spellLevels = [...new Set(spells.map((spell) => spell.level))].sort();
+    $: spellLevels = [...new Set(data.spells.map((spell) => spell.level))].sort();
 
     /** @type {number[]} */
     let setSpellLevelFilters = [];
 
     // Classes
     $: classes = [
-        ...new Set(spells.map((spell) => spell.classes.map((value) => value.index)).flat()),
+        ...new Set(data.spells.map((spell) => spell.classes.map((value) => value.index)).flat()),
     ];
 
     /** @type {string[]} */
     let setClassesFilters = [];
-    $: console.log("setClassesFilters", setClassesFilters);
 
-    $: filteredSpells = spells
+    $: filteredSpells = data.spells
+        .filter((spell) => spell.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()))
         .filter(
             (spell) =>
                 setSchoolFilters.length === 0 || setSchoolFilters.includes(spell.school.index)
@@ -40,7 +43,7 @@
      * @param {string} schoolValue
      */
     function getSchoolColor(schoolValue) {
-        return schools.find((school) => school.value === schoolValue)?.color || "#f0f0f0";
+        return data.schools.find((school) => school.value === schoolValue)?.color || "#f0f0f0";
     }
 </script>
 
@@ -55,7 +58,7 @@
             <h2 class="text-lg">School</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
-                {#each schools as school}
+                {#each data.schools as school}
                     <li>
                         <button
                             style="--color-button: {school.color};"
@@ -73,8 +76,10 @@
                                 } else {
                                     setSchoolFilters = [...setSchoolFilters, school.value];
                                 }
-                            }}>{school.label}</button
+                            }}
                         >
+                            {school.label}
+                        </button>
                     </li>
                 {/each}
             </ul>
@@ -140,14 +145,25 @@
     <!-- Content -->
     <div class="flex flex-col gap-4">
         <div
-            class="min-h-[3rem] bg-[#fff]/[0.04] flex py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
+            class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
         >
-            <span>
-                Filtered spell count:
-                <span class="text-[var(--color-accent)]">
-                    {filteredSpells.length}
-                </span>
-            </span>
+            <div class="flex-1">
+                <input
+                    type="text"
+                    class="bg-[#fff]/[0.02] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.04] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
+                    placeholder="Search by name"
+                    bind:value={searchInput}
+                />
+            </div>
+
+            <div class="flex-1 flex justify-end">
+                <div>
+                    Filtered spells:
+                    <span class="text-[var(--color-accent)]">
+                        {filteredSpells.length}
+                    </span>
+                </div>
+            </div>
         </div>
 
         <ul
@@ -155,8 +171,8 @@
         >
             {#each filteredSpells as spell}
                 <li>
-                    <button
-                        type="button"
+                    <a
+                        href="/spell/{spell.index}"
                         class="py-4 px-6 bg-[#fff]/[0.08] rounded-lg h-full w-full flex gap-6 transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.1]"
                     >
                         <div
@@ -176,7 +192,7 @@
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </a>
                 </li>
             {/each}
         </ul>
