@@ -1,19 +1,36 @@
 <script>
+    import { page } from "$app/stores";
+    import {
+        SPELL_CLASS_FILTER_KEY,
+        SPELL_INPUT_FILTER_KEY,
+        SPELL_LEVEL_FILTER_KEY,
+        SPELL_SCHOOL_FILTER_KEY,
+    } from "$lib/searchParamKeys.js";
+    import {
+        getSchoolColor,
+        setClassFilter,
+        setInputSearchFilter,
+        setSchoolFilter,
+        setSpellLevelFilter,
+    } from "$lib/utils.js";
+
     export let data;
 
     // Input search by name
     /** @type {string} */
-    let searchInput = "";
+    $: searchInput = $page.url.searchParams.get(SPELL_INPUT_FILTER_KEY) || "";
 
     // Schools
     /** @type {string[]} */
-    let setSchoolFilters = [];
+    $: schoolFilters = $page.url.searchParams.getAll(SPELL_SCHOOL_FILTER_KEY);
 
     // SpellLevels
     $: spellLevels = [...new Set(data.spells.map((spell) => spell.level))].sort();
 
     /** @type {number[]} */
-    let setSpellLevelFilters = [];
+    $: spellLevelFilters = $page.url.searchParams
+        .getAll(SPELL_LEVEL_FILTER_KEY)
+        .map((value) => +value);
 
     // Classes
     $: classes = [
@@ -21,30 +38,19 @@
     ];
 
     /** @type {string[]} */
-    let setClassesFilters = [];
+    $: classesFilters = $page.url.searchParams.getAll(SPELL_CLASS_FILTER_KEY);
 
     $: filteredSpells = data.spells
         .filter((spell) => spell.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()))
+        .filter((spell) => schoolFilters.length === 0 || schoolFilters.includes(spell.school.index))
         .filter(
-            (spell) =>
-                setSchoolFilters.length === 0 || setSchoolFilters.includes(spell.school.index)
+            (spell) => spellLevelFilters.length === 0 || spellLevelFilters.includes(spell.level)
         )
         .filter(
             (spell) =>
-                setSpellLevelFilters.length === 0 || setSpellLevelFilters.includes(spell.level)
-        )
-        .filter(
-            (spell) =>
-                setClassesFilters.length === 0 ||
-                spell.classes.find((magicClass) => setClassesFilters.includes(magicClass.index))
+                classesFilters.length === 0 ||
+                spell.classes.find((magicClass) => classesFilters.includes(magicClass.index))
         );
-
-    /**
-     * @param {string} schoolValue
-     */
-    function getSchoolColor(schoolValue) {
-        return data.schools.find((school) => school.value === schoolValue)?.color || "#f0f0f0";
-    }
 </script>
 
 <div class="w-full h-full p-4 box-border overflow-auto grid grid-cols-[20rem,auto] gap-4">
@@ -63,22 +69,14 @@
                         <button
                             style="--color-button: {school.color};"
                             class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                            class:!bg-[var(--color-button)]={setSchoolFilters.includes(
-                                school.value
-                            )}
-                            class:text-[#000]={setSchoolFilters.includes(school.value)}
+                            class:!bg-[var(--color-button)]={schoolFilters.includes(school.index)}
+                            class:text-[#000]={schoolFilters.includes(school.index)}
                             type="button"
                             on:click={() => {
-                                if (setSchoolFilters.includes(school.value)) {
-                                    setSchoolFilters = setSchoolFilters.filter(
-                                        (filterValue) => filterValue !== school.value
-                                    );
-                                } else {
-                                    setSchoolFilters = [...setSchoolFilters, school.value];
-                                }
+                                setSchoolFilter($page.url.toString(), school.index);
                             }}
                         >
-                            {school.label}
+                            {school.name}
                         </button>
                     </li>
                 {/each}
@@ -86,7 +84,7 @@
         </div>
 
         <div class="flex flex-col gap-4">
-            <h2 class="text-lg">Spelllevel</h2>
+            <h2 class="text-lg">Spell Level</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
                 {#each spellLevels as level}
@@ -94,15 +92,9 @@
                         <button
                             type="button"
                             class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                            class:!bg-[var(--color-primary)]={setSpellLevelFilters.includes(level)}
+                            class:!bg-[var(--color-primary)]={spellLevelFilters.includes(level)}
                             on:click={() => {
-                                if (setSpellLevelFilters.includes(level)) {
-                                    setSpellLevelFilters = setSpellLevelFilters.filter(
-                                        (spellLevel) => spellLevel !== level
-                                    );
-                                } else {
-                                    setSpellLevelFilters = [...setSpellLevelFilters, level];
-                                }
+                                setSpellLevelFilter($page.url.toString(), level);
                             }}
                         >
                             {level !== 0 ? level : "Cantrip"}
@@ -113,28 +105,23 @@
         </div>
 
         <div class="flex flex-col gap-4">
-            <h2 class="text-lg">Spelllevel</h2>
+            <h2 class="text-lg">Classes</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
-                {#each classes as magicClass}
+                {#each classes as classIndex}
+                    {@const name = /** @type {Record<string, { name: string }>} */ (data.classes)[
+                        classIndex
+                    ].name}
                     <li>
                         <button
                             type="button"
                             class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                            class:!bg-[var(--color-primary)]={setClassesFilters.includes(
-                                magicClass
-                            )}
+                            class:!bg-[var(--color-primary)]={classesFilters.includes(classIndex)}
                             on:click={() => {
-                                if (setClassesFilters.includes(magicClass)) {
-                                    setClassesFilters = setClassesFilters.filter(
-                                        (filteredClass) => filteredClass !== magicClass
-                                    );
-                                } else {
-                                    setClassesFilters = [...setClassesFilters, magicClass];
-                                }
+                                setClassFilter($page.url.toString(), classIndex);
                             }}
                         >
-                            {magicClass}
+                            {name}
                         </button>
                     </li>
                 {/each}
@@ -152,7 +139,15 @@
                     type="text"
                     class="bg-[#fff]/[0.02] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.04] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
                     placeholder="Search by name"
-                    bind:value={searchInput}
+                    value={searchInput}
+                    on:input={(event) => {
+                        if (event.target) {
+                            setInputSearchFilter(
+                                $page.url.toString(),
+                                /** @type HTMLInputElement */ (event.target).value
+                            );
+                        }
+                    }}
                 />
             </div>
 

@@ -1,10 +1,10 @@
 [
-    { "value": "abjuration", "label": "Abjuration", "color": "#3ea2e6" },
-    { "value": "conjuration", "label": "Conjuration", "color": "#e6ce4b" },
-    { "value": "divination", "label": "Divination", "color": "#f0f0f0" },
-    { "value": "enchantment", "label": "Enchantment", "color": "#e57ff0" },
-    { "value": "evocation", "label": "Evocation", "color": "#f04123" },
-    { "value": "illusion", "label": "Illusion", "color": "#9265f0" },
-    { "value": "necromancy", "label": "Necromancy", "color": "#7ee67c" },
-    { "value": "transmutation", "label": "Transmutation", "color": "#f0974a" }
+    { "index": "abjuration", "name": "Abjuration", "color": "#3ea2e6" },
+    { "index": "conjuration", "name": "Conjuration", "color": "#e6ce4b" },
+    { "index": "divination", "name": "Divination", "color": "#f0f0f0" },
+    { "index": "enchantment", "name": "Enchantment", "color": "#e57ff0" },
+    { "index": "evocation", "name": "Evocation", "color": "#f04123" },
+    { "index": "illusion", "name": "Illusion", "color": "#9265f0" },
+    { "index": "necromancy", "name": "Necromancy", "color": "#7ee67c" },
+    { "index": "transmutation", "name": "Transmutation", "color": "#f0974a" }
 ]
