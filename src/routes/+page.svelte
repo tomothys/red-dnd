@@ -106,7 +106,7 @@
         </div>
 
         <ul
-            class="list-none p-0 m-0 grid auto-rows-max grid-cols-[repeat(auto-fill,minmax(20rem,max-content))] gap-4"
+            class="list-none p-0 m-0 grid auto-rows-max grid-cols-[repeat(auto-fill,minmax(20rem,auto))] gap-4"
         >
             {#each filteredSpells as spell}
                 <li>
