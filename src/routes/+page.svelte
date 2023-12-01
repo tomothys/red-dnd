@@ -13,6 +13,7 @@
         setSchoolFilter,
         setSpellLevelFilter,
     } from "$lib/utils.js";
+    import { onMount } from "svelte";
 
     export let data;
 
@@ -56,9 +57,20 @@
 <div class="w-full h-full p-4 box-border overflow-auto grid grid-cols-[20rem,auto] gap-4">
     <!-- Sidebar -->
     <div
-        class="bg-[#fff]/[0.04] p-4 rounded-lg flex flex-col gap-8 transition-colors hover:bg-[#fff]/[0.05]"
+        class="bg-[#fff]/[0.04] p-4 rounded-lg overflow-auto h-full box-border inline-flex flex-col gap-8 transition-colors hover:bg-[#fff]/[0.05]"
     >
-        <h1 class="text-3xl">Filter</h1>
+        <div class="flex justify-between">
+            <h1 class="text-3xl">Filter</h1>
+
+            <span>
+                <a
+                    href="/"
+                    class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
+                >
+                    Clear filters
+                </a>
+            </span>
+        </div>
 
         <!-- School Filter -->
         <div class="flex flex-col gap-4">
@@ -133,11 +145,11 @@
     </div>
 
     <!-- Content -->
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 h-full overflow-auto">
         <div
-            class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
+            class="min-h-[3rem] max-h-full bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
         >
-            <div class="flex-1">
+            <div class="flex flex-1 items-center gap-4">
                 <input
                     type="text"
                     class="bg-[#fff]/[0.02] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.04] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
@@ -165,7 +177,7 @@
         </div>
 
         <ul
-            class="list-none p-0 m-0 grid auto-rows-max grid-cols-[repeat(auto-fill,minmax(20rem,auto))] gap-4"
+            class="list-none p-0 m-0 grid auto-rows-max grid-cols-[repeat(auto-fill,minmax(20rem,auto))] gap-4 overflow-auto"
         >
             {#each filteredSpells as spell}
                 <li>
