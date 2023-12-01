@@ -147,7 +147,7 @@
     <!-- Content -->
     <div class="flex flex-col gap-4 h-full overflow-auto">
         <div
-            class="min-h-[3rem] max-h-full bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
+            class="bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
         >
             <div class="flex flex-1 items-center gap-4">
                 <input
