@@ -2,13 +2,24 @@
     import spells from "$lib/data/spells.json";
     import schools from "$lib/data/schools.json";
 
+    // Schools
     /** @type {string[]} */
     let setSchoolFilters = [];
 
+    // SpellLevels
     $: spellLevels = [...new Set(spells.map((spell) => spell.level))].sort();
 
     /** @type {number[]} */
     let setSpellLevelFilters = [];
+
+    // Classes
+    $: classes = [
+        ...new Set(spells.map((spell) => spell.classes.map((value) => value.index)).flat()),
+    ];
+
+    /** @type {string[]} */
+    let setClassesFilters = [];
+    $: console.log("setClassesFilters", setClassesFilters);
 
     $: filteredSpells = spells
         .filter(
@@ -18,6 +29,11 @@
         .filter(
             (spell) =>
                 setSpellLevelFilters.length === 0 || setSpellLevelFilters.includes(spell.level)
+        )
+        .filter(
+            (spell) =>
+                setClassesFilters.length === 0 ||
+                spell.classes.find((magicClass) => setClassesFilters.includes(magicClass.index))
         );
 
     /**
@@ -85,6 +101,35 @@
                             }}
                         >
                             {level !== 0 ? level : "Cantrip"}
+                        </button>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <h2 class="text-lg">Spelllevel</h2>
+
+            <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
+                {#each classes as magicClass}
+                    <li>
+                        <button
+                            type="button"
+                            class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
+                            class:!bg-[var(--color-primary)]={setClassesFilters.includes(
+                                magicClass
+                            )}
+                            on:click={() => {
+                                if (setClassesFilters.includes(magicClass)) {
+                                    setClassesFilters = setClassesFilters.filter(
+                                        (filteredClass) => filteredClass !== magicClass
+                                    );
+                                } else {
+                                    setClassesFilters = [...setClassesFilters, magicClass];
+                                }
+                            }}
+                        >
+                            {magicClass}
                         </button>
                     </li>
                 {/each}
