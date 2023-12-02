@@ -28,6 +28,23 @@
     -webkit-text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+    background: var(--color-background);
+    width: 1rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    border: 0.25rem solid var(--color-background);
+    background: #171516;
+
+    &:hover {
+        background: var(--color-primary);
+        cursor: pointer;
+    }
+}
+
 .material-icon {
     font-variation-settings:
         "FILL" 0,
