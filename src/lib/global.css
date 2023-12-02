@@ -11,8 +11,9 @@
 @import "@fontsource/ubuntu/500-italic.css";
 @import "@fontsource/ubuntu/700-italic.css";
 
+@import "@fontsource/material-icons/400.css";
+
 :root {
-    /* --color-text: #fdf7fb; */
     --color-text: #ddd9dc;
     --color-background: #040103;
     --color-primary: #511727;
@@ -25,6 +26,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+}
+
+.material-icon {
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    font-family: "Material Icons";
 }
 
 html {
@@ -44,6 +54,7 @@ html {
 
 body {
     width: 100%;
+    max-width: 1700px;
     height: 100%;
     margin: 0;
     padding: 0;

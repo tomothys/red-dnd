@@ -74,22 +74,23 @@
 >
     <!-- Sidebar/Filter -->
     <div
-        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border flex flex-col gap-4 md:gap-8 transition-colors hover:bg-[#fff]/[0.08]"
+        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border flex flex-col gap-6 md:gap-8 transition-colors hover:bg-[#fff]/[0.08]"
     >
         <div class="flex justify-between items-center">
-            <h1 class="hidden md:inline-block text-3xl">Filter</h1>
+            <h1 class="hidden md:inline-block text-3xl">Filters</h1>
 
             <button
                 type="button"
-                class="flex justify-start md:hidden text-md font-semibold"
-                class:flex-1={areFiltersOpen === false}
+                class="md:hidden text-md font-semibold flex items-center justify-start gap-2"
                 on:click={() => (areFiltersOpen = !areFiltersOpen)}
             >
                 {#if areFiltersOpen}
-                    Hide Filters
+                    <span class="material-icon text-xl">unfold_less</span>
                 {:else}
-                    Open Filters
+                    <span class="material-icon text-xl">unfold_more</span>
                 {/if}
+
+                Filters
             </button>
 
             {#if showClearFilterButton}
@@ -106,11 +107,11 @@
 
         <!-- School Filter -->
         <div
-            class="md:flex flex-col gap-4"
+            class="md:flex flex-col gap-2 md:gap-4"
             class:hidden={areFiltersOpen === false}
             class:flex={areFiltersOpen}
         >
-            <h2 class="text-lg">School</h2>
+            <h2 class="text-md md:text-lg font-semibold">School</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
                 {#each data.schools as school}
@@ -134,11 +135,11 @@
 
         <!-- Spell Level Filter -->
         <div
-            class="md:flex flex-col gap-4"
+            class="md:flex flex-col gap-2 md:gap-4"
             class:hidden={areFiltersOpen === false}
             class:flex={areFiltersOpen}
         >
-            <h2 class="text-lg">Spell Level</h2>
+            <h2 class="text-md md:text-lg font-semibold">Spell Level</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
                 {#each spellLevels as level}
@@ -160,11 +161,11 @@
 
         <!-- Classes Filter -->
         <div
-            class="md:flex flex-col gap-4"
+            class="md:flex flex-col gap-2 md:gap-4"
             class:hidden={areFiltersOpen === false}
             class:flex={areFiltersOpen}
         >
-            <h2 class="text-lg">Classes</h2>
+            <h2 class="text-md md:text-lg font-semibold">Classes</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
                 {#each classIndices as classIndex}
