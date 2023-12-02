@@ -30,7 +30,8 @@ export function setSchoolFilter(currentUrl, schoolValue) {
     goto(url.toString());
 }
 
-// TODO Add debouncer so the history wont be flooded
+/** @type {number | undefined} debounceInputSearchId */
+let debounceInputSearchId = undefined;
 /**
  * @param {string} currentUrl
  * @param {string} input
@@ -44,7 +45,18 @@ export function setInputSearchFilter(currentUrl, input) {
         url.searchParams.set(SPELL_INPUT_FILTER_KEY, input);
     }
 
-    goto(url.toString(), { keepFocus: true });
+    if (debounceInputSearchId !== undefined) {
+        clearTimeout(debounceInputSearchId);
+    }
+
+    debounceInputSearchId = setTimeout(
+        () => {
+            goto(url.toString(), { keepFocus: true });
+            debounceInputSearchId = undefined;
+        },
+        500,
+        undefined
+    );
 }
 
 /**
