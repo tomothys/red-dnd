@@ -70,11 +70,11 @@
 </script>
 
 <div
-    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content, 100%] gap-4 grid-cols-[auto]"
+    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content,100%] gap-4 grid-cols-[auto]"
 >
     <!-- Sidebar/Filter -->
     <div
-        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border flex flex-col gap-6 md:gap-8 transition-colors hover:bg-[#fff]/[0.08]"
+        class="h-max md:h-full bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto box-border flex flex-col gap-6 md:gap-8 transition-colors hover:bg-[#fff]/[0.08]"
     >
         <div class="flex justify-between items-center">
             <h1 class="hidden md:inline-block text-3xl">Filters</h1>
