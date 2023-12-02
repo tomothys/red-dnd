@@ -60,3 +60,28 @@ body {
     padding: 0;
     font-family: "Ubuntu", sans-serif;
 }
+
+thead tr {
+    background-color: var(--color-primary);
+    text-align: left;
+
+    & th {
+        padding: 0.25rem;
+    }
+}
+
+tbody tr {
+    background-color: var(--color-secondary);
+
+    & td {
+        padding: 0.25rem;
+    }
+
+    &:nth-child(2n) {
+        background-color: color-mix(in srgb, var(--color-secondary) 97%, #fff);
+    }
+}
+
+strong {
+    color: var(--color-accent);
+}

@@ -15,6 +15,9 @@
         setSchoolFilter,
         setSpellLevelFilter,
     } from "$lib/utils.js";
+    import Markdown from "markdown-it";
+
+    const markdown = new Markdown();
 
     export let data;
 
@@ -346,11 +349,13 @@
             </div>
 
             <div
-                class="flex-1 bg-[#fff]/[0.04] py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05] overflow-auto"
+                class="flex-1 flex flex-col gap-4 bg-[#fff]/[0.04] py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05] overflow-auto"
             >
                 <h2 class="font-bold">Description</h2>
-                <br />
-                {@html selectedSpell.desc.join("<br /><br />")}
+
+                {@html markdown.render(
+                    selectedSpell.desc.join("\n\n").replaceAll(/\|\n\n\|/g, "|\n|")
+                )}
             </div>
         </div>
     {/if}
