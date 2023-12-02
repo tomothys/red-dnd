@@ -270,13 +270,13 @@
             <div
                 class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
             >
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-3">
                     <div
                         style="--color-school: {getSchoolColor(selectedSpell.school.index)}"
                         class="w-4 aspect-square bg-[var(--color-school)] rounded-sm"
                     ></div>
 
-                    <h1>{selectedSpell.name}</h1>
+                    <h1 class="font-semibold">{selectedSpell.name}</h1>
                 </div>
 
                 <button
@@ -285,14 +285,16 @@
                         const url = new URL($page.url);
                         url.searchParams.delete(SPELL_SELECTED_FILTER_KEY);
                         goto(url);
-                    }}>X</button
+                    }}
                 >
+                    <span class="material-icon text-xl font-bold">close</span>
+                </button>
             </div>
 
             <div class="bg-[#fff]/[0.04] py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]">
                 <!-- Casting time -->
                 <div>
-                    Castingtime <span class="text-[var(--color-accent)]">
+                    Castingtime <span class="font-semibold text-[var(--color-accent)]">
                         {selectedSpell.casting_time}
                     </span>
                 </div>
@@ -303,7 +305,7 @@
                     {@const type = selectedSpell.area_of_effect.type}
 
                     <div>
-                        Range / Area <span class="text-[var(--color-accent)]">
+                        Range / Area <span class="font-semibold text-[var(--color-accent)]">
                             {size} / {type}
                         </span>
                     </div>
@@ -311,12 +313,12 @@
 
                 <!-- Components -->
                 <div>
-                    Components <span class="text-[var(--color-accent)]">
+                    Components <span class="font-semibold text-[var(--color-accent)]">
                         {selectedSpell.components.join(", ")}
                     </span>
 
                     {#if selectedSpell.material}
-                        <span class="text-[var(--color-accent)] text-xs">
+                        <span class="font-semibold text-[var(--color-accent)] text-xs">
                             ({selectedSpell.material})
                         </span>
                     {/if}
@@ -324,7 +326,7 @@
 
                 <!-- Duration -->
                 <div>
-                    Duration <span class="text-[var(--color-accent)]">
+                    Duration <span class="font-semibold text-[var(--color-accent)]">
                         {selectedSpell.duration}
                     </span>
                 </div>
