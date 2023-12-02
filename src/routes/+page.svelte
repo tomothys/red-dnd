@@ -1,10 +1,12 @@
 <script>
+    import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import {
         SPELL_CLASS_FILTER_KEY,
         SPELL_INPUT_FILTER_KEY,
         SPELL_LEVEL_FILTER_KEY,
         SPELL_SCHOOL_FILTER_KEY,
+        SPELL_SELECTED_FILTER_KEY,
     } from "$lib/searchParamKeys.js";
     import {
         getSchoolColor,
@@ -23,8 +25,10 @@
     $: schoolFilters = $page.url.searchParams.getAll(SPELL_SCHOOL_FILTER_KEY);
 
     // SpellLevels
-    $: spellLevels = $page.url.searchParams.getAll(SPELL_LEVEL_FILTER_KEY).map((value) => +value);
-    $: spellLevelFilters = [...new Set(data.spells.map((spell) => spell.level))].sort();
+    $: spellLevels = [...new Set(data.spells.map((spell) => spell.level))].sort();
+    $: spellLevelFilters = $page.url.searchParams
+        .getAll(SPELL_LEVEL_FILTER_KEY)
+        .map((value) => +value);
 
     // Classes
     $: classIndices = [
@@ -32,37 +36,55 @@
     ];
     $: classesFilters = $page.url.searchParams.getAll(SPELL_CLASS_FILTER_KEY);
 
+    $: showClearFilterButton =
+        classesFilters.length > 0 || spellLevelFilters.length > 0 || schoolFilters.length > 0;
+
     $: filteredSpells = data.spells
         .filter((spell) => {
             // TODO Maybe add fuzzy finding?
             return spell.name.toLocaleLowerCase().includes(searchInputFilter.toLocaleLowerCase());
         })
         .filter((spell) => schoolFilters.length === 0 || schoolFilters.includes(spell.school.index))
-        .filter((spell) => spellLevels.length === 0 || spellLevels.includes(spell.level))
+        .filter(
+            (spell) => spellLevelFilters.length === 0 || spellLevelFilters.includes(spell.level)
+        )
         .filter((spell) => {
             return (
                 classesFilters.length === 0 ||
                 spell.classes.find((charClass) => classesFilters.includes(charClass.index))
             );
         });
+
+    $: selectedSpell = data.spells.find((spell) => {
+        return spell.index === $page.url.searchParams.get(SPELL_SELECTED_FILTER_KEY);
+    });
+
+    /** @param {string} spellIndex */
+    function getSpellDialogUrl(spellIndex) {
+        const url = new URL($page.url.toString());
+        url.searchParams.set(SPELL_SELECTED_FILTER_KEY, spellIndex);
+        return url.toString();
+    }
 </script>
 
 <div class="w-full h-full p-4 box-border overflow-auto grid grid-cols-[20rem,auto] gap-4">
     <!-- Sidebar -->
     <div
-        class="bg-[#fff]/[0.04] p-4 rounded-lg overflow-auto h-full box-border inline-flex flex-col gap-8 transition-colors hover:bg-[#fff]/[0.05]"
+        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border inline-flex flex-col gap-8 transition-colors hover:bg-[#fff]/[0.08]"
     >
-        <div class="flex justify-between">
+        <div class="flex justify-between items-center">
             <h1 class="text-3xl">Filter</h1>
 
-            <span>
-                <a
-                    href="/"
-                    class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                >
-                    Clear filters
-                </a>
-            </span>
+            {#if showClearFilterButton}
+                <span>
+                    <a
+                        href="/"
+                        class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
+                    >
+                        Clear filters
+                    </a>
+                </span>
+            {/if}
         </div>
 
         <!-- School Filter -->
@@ -94,12 +116,12 @@
             <h2 class="text-lg">Spell Level</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
-                {#each spellLevelFilters as level}
+                {#each spellLevels as level}
                     <li>
                         <button
                             type="button"
                             class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                            class:!bg-[var(--color-primary)]={spellLevels.includes(level)}
+                            class:!bg-[var(--color-primary)]={spellLevelFilters.includes(level)}
                             on:click={() => {
                                 setSpellLevelFilter($page.url.toString(), level);
                             }}
@@ -138,14 +160,14 @@
     </div>
 
     <!-- Content -->
-    <div class="flex flex-col gap-4 h-full overflow-auto">
+    <div class="flex flex-col gap-4 h-full overflow-auto isolate">
         <div
-            class="bg-[#0e0b0d] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#100e0f] sticky top-0 isolate z-20"
+            class="bg-[#121011] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516] sticky top-0 z-20"
         >
             <div class="flex flex-1 items-center gap-4">
                 <input
                     type="text"
-                    class="bg-[#fff]/[0.02] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.04] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
+                    class="bg-[#fff]/[0.06] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
                     placeholder="Search by name"
                     value={searchInputFilter}
                     on:input={(event) => {
@@ -175,7 +197,7 @@
             {#each filteredSpells as spell}
                 <li>
                     <a
-                        href="/spell/{spell.index}"
+                        href={getSpellDialogUrl(spell.index)}
                         class="py-4 px-6 bg-[#fff]/[0.08] rounded-lg h-full w-full flex gap-6 transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.1]"
                     >
                         <div
@@ -202,3 +224,85 @@
         </ul>
     </div>
 </div>
+
+<dialog
+    open={Boolean(selectedSpell)}
+    class="absolute top-0 left-0 box-border bg-[#fff]/[0.15] w-full h-full text-[var(--color-text)] open:flex open:items-center open:justify-center open:flex-col open:gap-4"
+>
+    {#if selectedSpell}
+        <div
+            class="p-4 flex flex-col gap-4 bg-[var(--color-background)] rounded-xl w-[80%] max-w-2xl max-h-[80%]"
+        >
+            <div
+                class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
+            >
+                <div class="flex items-center gap-2">
+                    <div
+                        style="--color-school: {getSchoolColor(selectedSpell.school.index)}"
+                        class="w-4 aspect-square bg-[var(--color-school)] rounded-sm"
+                    ></div>
+
+                    <h1>{selectedSpell.name}</h1>
+                </div>
+
+                <button
+                    type="button"
+                    on:click={() => {
+                        const url = new URL($page.url);
+                        url.searchParams.delete(SPELL_SELECTED_FILTER_KEY);
+                        goto(url);
+                    }}>X</button
+                >
+            </div>
+
+            <div class="bg-[#fff]/[0.04] py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]">
+                <!-- Casting time -->
+                <div>
+                    Castingtime <span class="text-[var(--color-accent)]">
+                        {selectedSpell.casting_time}
+                    </span>
+                </div>
+
+                <!-- Range / Area -->
+                {#if selectedSpell.area_of_effect}
+                    {@const size = selectedSpell.area_of_effect.size}
+                    {@const type = selectedSpell.area_of_effect.type}
+
+                    <div>
+                        Range / Area <span class="text-[var(--color-accent)]">
+                            {size} / {type}
+                        </span>
+                    </div>
+                {/if}
+
+                <!-- Components -->
+                <div>
+                    Components <span class="text-[var(--color-accent)]">
+                        {selectedSpell.components.join(", ")}
+                    </span>
+
+                    {#if selectedSpell.material}
+                        <span class="text-[var(--color-accent)] text-xs">
+                            ({selectedSpell.material})
+                        </span>
+                    {/if}
+                </div>
+
+                <!-- Duration -->
+                <div>
+                    Duration <span class="text-[var(--color-accent)]">
+                        {selectedSpell.duration}
+                    </span>
+                </div>
+            </div>
+
+            <div
+                class="flex-1 bg-[#fff]/[0.04] py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05] overflow-auto"
+            >
+                <h2 class="font-bold">Description</h2>
+                <br />
+                {@html selectedSpell.desc.join("<br /><br />")}
+            </div>
+        </div>
+    {/if}
+</dialog>

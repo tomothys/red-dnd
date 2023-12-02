@@ -30,6 +30,7 @@ export function setSchoolFilter(currentUrl, schoolValue) {
     goto(url.toString());
 }
 
+// TODO Add debouncer so the history wont be flooded
 /**
  * @param {string} currentUrl
  * @param {string} input

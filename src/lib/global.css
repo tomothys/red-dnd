@@ -12,7 +12,8 @@
 @import "@fontsource/ubuntu/700-italic.css";
 
 :root {
-    --color-text: #fdf7fb;
+    /* --color-text: #fdf7fb; */
+    --color-text: #ddd9dc;
     --color-background: #040103;
     --color-primary: #511727;
     --color-secondary: #130610;
