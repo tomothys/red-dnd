@@ -65,15 +65,32 @@
         url.searchParams.set(SPELL_SELECTED_FILTER_KEY, spellIndex);
         return url.toString();
     }
+
+    let areFiltersOpen = false;
 </script>
 
-<div class="w-full h-full p-4 box-border overflow-auto grid grid-cols-[20rem,auto] gap-4">
-    <!-- Sidebar -->
+<div
+    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content, 100%] gap-4 grid-cols-[auto]"
+>
+    <!-- Sidebar/Filter -->
     <div
-        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border inline-flex flex-col gap-8 transition-colors hover:bg-[#fff]/[0.08]"
+        class="bg-[#fff]/[0.06] p-4 rounded-lg overflow-auto h-full box-border flex flex-col gap-4 md:gap-8 transition-colors hover:bg-[#fff]/[0.08]"
     >
         <div class="flex justify-between items-center">
-            <h1 class="text-3xl">Filter</h1>
+            <h1 class="hidden md:inline-block text-3xl">Filter</h1>
+
+            <button
+                type="button"
+                class="flex justify-start md:hidden text-md font-semibold"
+                class:flex-1={areFiltersOpen === false}
+                on:click={() => (areFiltersOpen = !areFiltersOpen)}
+            >
+                {#if areFiltersOpen}
+                    Hide Filters
+                {:else}
+                    Open Filters
+                {/if}
+            </button>
 
             {#if showClearFilterButton}
                 <span>
@@ -88,7 +105,11 @@
         </div>
 
         <!-- School Filter -->
-        <div class="flex flex-col gap-4">
+        <div
+            class="md:flex flex-col gap-4"
+            class:hidden={areFiltersOpen === false}
+            class:flex={areFiltersOpen}
+        >
             <h2 class="text-lg">School</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
@@ -112,7 +133,11 @@
         </div>
 
         <!-- Spell Level Filter -->
-        <div class="flex flex-col gap-4">
+        <div
+            class="md:flex flex-col gap-4"
+            class:hidden={areFiltersOpen === false}
+            class:flex={areFiltersOpen}
+        >
             <h2 class="text-lg">Spell Level</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
@@ -134,7 +159,11 @@
         </div>
 
         <!-- Classes Filter -->
-        <div class="flex flex-col gap-4">
+        <div
+            class="md:flex flex-col gap-4"
+            class:hidden={areFiltersOpen === false}
+            class:flex={areFiltersOpen}
+        >
             <h2 class="text-lg">Classes</h2>
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
@@ -160,33 +189,37 @@
     </div>
 
     <!-- Content -->
-    <div class="flex flex-col gap-4 h-full overflow-auto isolate">
+    <div class="flex flex-col h-full w-full gap-4 isolate overflow-auto">
         <div
-            class="bg-[#121011] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516] sticky top-0 z-20"
+            class="bg-[var(--color-background)] sticky top-0 z-10 rounded-br-lg rounded-bl-lg border-b-2 border-[var(--color-background)] border-solid"
         >
-            <div class="flex flex-1 items-center gap-4">
-                <input
-                    type="text"
-                    class="bg-[#fff]/[0.06] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
-                    placeholder="Search by name"
-                    value={searchInputFilter}
-                    on:input={(event) => {
-                        if (event.target) {
-                            setInputSearchFilter(
-                                $page.url.toString(),
-                                /** @type HTMLInputElement */ (event.target).value
-                            );
-                        }
-                    }}
-                />
-            </div>
+            <div
+                class="bg-[#121011] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516]"
+            >
+                <div class="flex flex-1 items-center gap-4">
+                    <input
+                        type="text"
+                        class="bg-[#fff]/[0.06] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
+                        placeholder="Search by name"
+                        value={searchInputFilter}
+                        on:input={(event) => {
+                            if (event.target) {
+                                setInputSearchFilter(
+                                    $page.url.toString(),
+                                    /** @type HTMLInputElement */ (event.target).value
+                                );
+                            }
+                        }}
+                    />
+                </div>
 
-            <div class="flex-1 flex justify-end">
-                <div>
-                    Filtered spells:
-                    <span class="text-[var(--color-accent)]">
-                        {filteredSpells.length}
-                    </span>
+                <div class="flex-1 flex justify-end">
+                    <div>
+                        Filtered spells:
+                        <span class="text-[var(--color-accent)]">
+                            {filteredSpells.length}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
