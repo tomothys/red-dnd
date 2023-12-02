@@ -13,22 +13,18 @@
         setSchoolFilter,
         setSpellLevelFilter,
     } from "$lib/utils.js";
-    import { onMount } from "svelte";
 
     export let data;
 
     // Input search by name
-    /** @type {string} */
     $: searchInput = $page.url.searchParams.get(SPELL_INPUT_FILTER_KEY) || "";
 
     // Schools
-    /** @type {string[]} */
     $: schoolFilters = $page.url.searchParams.getAll(SPELL_SCHOOL_FILTER_KEY);
 
     // SpellLevels
     $: spellLevels = [...new Set(data.spells.map((spell) => spell.level))].sort();
 
-    /** @type {number[]} */
     $: spellLevelFilters = $page.url.searchParams
         .getAll(SPELL_LEVEL_FILTER_KEY)
         .map((value) => +value);
@@ -38,7 +34,6 @@
         ...new Set(data.spells.map((spell) => spell.classes.map((value) => value.index)).flat()),
     ];
 
-    /** @type {string[]} */
     $: classesFilters = $page.url.searchParams.getAll(SPELL_CLASS_FILTER_KEY);
 
     $: filteredSpells = data.spells
