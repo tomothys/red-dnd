@@ -37,7 +37,10 @@
     $: classesFilters = $page.url.searchParams.getAll(SPELL_CLASS_FILTER_KEY);
 
     $: showClearFilterButton =
-        classesFilters.length > 0 || spellLevelFilters.length > 0 || schoolFilters.length > 0;
+        classesFilters.length > 0 ||
+        spellLevelFilters.length > 0 ||
+        schoolFilters.length > 0 ||
+        searchInputFilter !== "";
 
     $: filteredSpells = data.spells
         .filter((spell) => {
