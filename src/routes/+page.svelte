@@ -1,4 +1,5 @@
 <script>
+    import { fade, scale } from "svelte/transition";
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import {
@@ -282,6 +283,7 @@
     {#if selectedSpell}
         <div
             class="relative p-6 pb-8 flex flex-col gap-4 bg-[var(--color-background)] rounded-xl w-[85%] max-w-2xl max-h-[90%]"
+            transition:fade={{ duration: 200 }}
         >
             <div
                 class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
