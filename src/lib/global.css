@@ -85,3 +85,8 @@ tbody tr {
 strong {
     color: var(--color-accent);
 }
+
+ul {
+    padding-left: 1rem;
+    list-style-type: circle;
+}
