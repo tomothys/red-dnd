@@ -73,7 +73,7 @@
 </script>
 
 <div
-    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content,100%] md:grid-rows-[100%] gap-4 grid-cols-[auto]"
+    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content,auto] md:grid-rows-[100%] gap-4 grid-cols-[auto]"
 >
     <!-- Sidebar/Filter -->
     <div
@@ -264,11 +264,21 @@
 
 <dialog
     open={Boolean(selectedSpell)}
-    class="absolute top-0 left-0 box-border bg-[#fff]/[0.15] w-full h-full text-[var(--color-text)] open:flex open:items-center open:justify-center open:flex-col open:gap-4"
+    class="absolute top-0 left-0 bg-transparent w-full h-full text-[var(--color-text)] open:flex open:items-center open:justify-center open:flex-col open:gap-4"
 >
+    <button
+        type="button"
+        on:click={() => {
+            const url = new URL($page.url);
+            url.searchParams.delete(SPELL_SELECTED_FILTER_KEY);
+            goto(url);
+        }}
+        class="fixed top-0 left-0 bg-[#000]/[0.1] w-[110%] h-[110%] cursor-default backdrop-blur-md"
+    ></button>
+
     {#if selectedSpell}
         <div
-            class="p-4 flex flex-col gap-4 bg-[var(--color-background)] rounded-xl w-[80%] max-w-2xl max-h-[80%]"
+            class="relative p-6 pb-8 flex flex-col gap-4 bg-[var(--color-background)] rounded-xl w-[85%] max-w-2xl max-h-[90%]"
         >
             <div
                 class="min-h-[3rem] bg-[#fff]/[0.04] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#fff]/[0.05]"
