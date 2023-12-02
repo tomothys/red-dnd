@@ -73,7 +73,7 @@
 </script>
 
 <div
-    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content,100%] gap-4 grid-cols-[auto]"
+    class="w-full h-full p-4 box-border grid md:grid-cols-[20rem,auto] grid-rows-[max-content,100%] md:grid-rows-[100%] gap-4 grid-cols-[auto]"
 >
     <!-- Sidebar/Filter -->
     <div
