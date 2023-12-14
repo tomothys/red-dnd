@@ -1,0 +1,2298 @@
+[
+    {
+        "index": "blade-ward",
+        "name": "Blade Ward",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "blinding-smite",
+        "name": "Blinding Smite",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "chromatic-orb",
+        "name": "Chromatic Orb",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "circle-of-power",
+        "name": "Circle of Power",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "cloud-of-daggers",
+        "name": "Cloud of Daggers",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "commune-with-nature",
+        "name": "Commune with Nature",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "compelled-duel",
+        "name": "Compelled Duel",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "conjure-barrage",
+        "name": "Conjure Barrage",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "conjure-volley",
+        "name": "Conjure Volley",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "cordon-of-arrows",
+        "name": "Cordon of Arrows",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "crown-of-madness",
+        "name": "Crown of Madness",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "crusader’s-mantle",
+        "name": "Crusader’s Mantle",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "destructive-wave",
+        "name": "Destructive Wave",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "dissonant-whispers",
+        "name": "Dissonant Whispers",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "drawmij’s-instant-summons",
+        "name": "Drawmij’s Instant Summons",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "elemental-weapon",
+        "name": "Elemental Weapon",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "ensnaring-strike",
+        "name": "Ensnaring Strike",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "evard’s-black-tentacles",
+        "name": "Evard’s Black Tentacles",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "feign-death",
+        "name": "Feign Death",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "friends",
+        "name": "Friends",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "grasping-vine",
+        "name": "Grasping Vine",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "hail-of-thorns",
+        "name": "Hail of Thorns",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "heroes’-feast",
+        "name": "Heroes’ Feast",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "hex",
+        "name": "Hex",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "hunger-of-hadar",
+        "name": "Hunger of Hadar",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "hunter’s-mark",
+        "name": "Hunter’s Mark",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "leomund’s-secret-chest",
+        "name": "Leomund’s Secret Chest",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "leomund’s-tiny-hut",
+        "name": "Leomund’s Tiny Hut",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "lightning-arrow",
+        "name": "Lightning Arrow",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "meld-into-stone",
+        "name": "Meld into Stone",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "melf’s-acid-arrow",
+        "name": "Melf’s Acid Arrow",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "mordenkainen’s-faithful-hound",
+        "name": "Mordenkainen’s Faithful Hound",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "mordenkainen’s-magnificent-mansion",
+        "name": "Mordenkainen’s Magnificent Mansion",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "mordenkainen’s-private-sanctum",
+        "name": "Mordenkainen’s Private Sanctum",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "mordenkainen’s-sword",
+        "name": "Mordenkainen’s Sword",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "nystul’s-magic-aura",
+        "name": "Nystul’s Magic Aura",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "otiluke’s-freezing-sphere",
+        "name": "Otiluke’s Freezing Sphere",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "otiluke’s-resilient-sphere",
+        "name": "Otiluke’s Resilient Sphere",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "otto’s-irresistible-dance",
+        "name": "Otto’s Irresistible Dance",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "pass-without-trace",
+        "name": "Pass without Trace",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "phantasmal-force",
+        "name": "Phantasmal Force",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "power-word-heal",
+        "name": "Power Word Heal",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "protection-from-energy",
+        "name": "Protection from Energy",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "rary’s-telepathic-bond",
+        "name": "Rary’s Telepathic Bond",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "ray-of-sickness",
+        "name": "Ray of Sickness",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "searing-smite",
+        "name": "Searing Smite",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "staggering-smite",
+        "name": "Staggering Smite",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "swift-quiver",
+        "name": "Swift Quiver",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "tasha’s-hideous-laughter",
+        "name": "Tasha’s Hideous Laughter",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "telepathy",
+        "name": "Telepathy",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "tenser’s-floating-disk",
+        "name": "Tenser’s Floating Disk",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "thorn-whip",
+        "name": "Thorn Whip",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "thunderous-smite",
+        "name": "Thunderous Smite",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "tsunami",
+        "name": "Tsunami",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "witch-bolt",
+        "name": "Witch Bolt",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    },
+    {
+        "index": "wrathful-smite",
+        "name": "Wrathful Smite",
+        "desc": [],
+        "higher_level": [],
+        "range": "",
+        "components": [],
+        "material": "",
+        "ritual": false,
+        "duration": "",
+        "concentration": false,
+        "casting_time": "",
+        "level": 0,
+        "attack_type": "",
+        "damage": {
+            "damage_type": {
+                "index": "acid",
+                "name": "Acid"
+            },
+            "damage_at_slot_level": {
+                "2": "4d4",
+                "3": "5d4",
+                "4": "6d4",
+                "5": "7d4",
+                "6": "8d4",
+                "7": "9d4",
+                "8": "10d4",
+                "9": "11d4"
+            }
+        },
+        "school": {
+            "index": "evocation",
+            "name": "Evocation"
+        },
+        "classes": [
+            {
+                "index": "wizard",
+                "name": "Wizard"
+            }
+        ]
+    }
+]
