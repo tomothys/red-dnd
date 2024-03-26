@@ -5,7 +5,9 @@ import {
     SPELL_INPUT_FILTER_KEY,
     SPELL_LEVEL_FILTER_KEY,
     SPELL_SCHOOL_FILTER_KEY,
+    SPELL_SORT_VALUES,
 } from "./searchParamKeys";
+import classes from "$lib/data/classes.json";
 
 /**
  * @param {string} schoolIndex
@@ -90,4 +92,28 @@ export function setClassFilter(currentUrl, className) {
     }
 
     goto(url.toString());
+}
+
+/**
+ * @param {any} value
+ * @returns {value is (typeof SPELL_SORT_VALUES)[number]}
+ */
+export function isSpellSortValue(value) {
+    return SPELL_SORT_VALUES.includes(value);
+}
+
+/**
+ * @param {never} value
+ * @returns void
+ */
+export function assertUnreachable(value) {
+    throw new Error(`We should not reach this point. Value: ${value}`);
+}
+
+/**
+ * @param {any} value
+ * @returns {value is import("$lib/data/classes").Class}
+ */
+export function isClass(value) {
+    return Object.keys(classes).includes(value);
 }
