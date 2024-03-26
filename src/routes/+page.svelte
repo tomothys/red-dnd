@@ -1,15 +1,21 @@
 <script>
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
+    import CustomSelect from "$lib/component/CustomSelect.svelte";
     import {
         SPELL_CLASS_FILTER_KEY,
         SPELL_INPUT_FILTER_KEY,
         SPELL_LEVEL_FILTER_KEY,
         SPELL_SCHOOL_FILTER_KEY,
         SPELL_SELECTED_FILTER_KEY,
+        SPELL_SORT_KEY,
+        SPELL_SORT_VALUES,
     } from "$lib/searchParamKeys.js";
     import {
+        assertUnreachable,
         getSchoolColor,
+        isClass,
+        isSpellSortValue,
         setClassFilter,
         setInputSearchFilter,
         setSchoolFilter,
@@ -21,22 +27,35 @@
 
     export let data;
 
-    // Input search by name
+    /** Input search by name */
     $: searchInputFilter = $page.url.searchParams.get(SPELL_INPUT_FILTER_KEY) || "";
 
-    // Schools
+    /** List of schools */
     $: schoolFilters = $page.url.searchParams.getAll(SPELL_SCHOOL_FILTER_KEY);
 
-    // SpellLevels
+    /** List of spell levels */
     $: spellLevels = [...new Set(data.spells.map((spell) => spell.level))].sort();
     $: spellLevelFilters = $page.url.searchParams
         .getAll(SPELL_LEVEL_FILTER_KEY)
         .map((value) => +value);
 
-    // Classes
-    $: classIndices = [
-        ...new Set(data.spells.map((spell) => spell.classes.map((value) => value.index)).flat()),
-    ];
+    /**
+     * List of classes filtered out of all spells
+     * @type Array<import("$lib/data/classes").Class>
+     */
+    let classIndices = [];
+    $: console.log("classIndices", classIndices);
+    $: {
+        classIndices = /** @type Array<import("$lib/data/classes").Class> */ (
+            [
+                ...new Set(
+                    data.spells.map((spell) => spell.classes.map((value) => value.index)).flat()
+                ),
+            ].filter((value) => isClass(value))
+        );
+    }
+
+    /** List of set class filters */
     $: classesFilters = $page.url.searchParams.getAll(SPELL_CLASS_FILTER_KEY);
 
     $: showClearFilterButton =
@@ -50,16 +69,57 @@
             // TODO Maybe add fuzzy finding?
             return spell.name.toLocaleLowerCase().includes(searchInputFilter.toLocaleLowerCase());
         })
-        .filter((spell) => schoolFilters.length === 0 || schoolFilters.includes(spell.school.index))
-        .filter(
-            (spell) => spellLevelFilters.length === 0 || spellLevelFilters.includes(spell.level)
-        )
+        .filter((spell) => {
+            return schoolFilters.length === 0 || schoolFilters.includes(spell.school.index);
+        })
+        .filter((spell) => {
+            return spellLevelFilters.length === 0 || spellLevelFilters.includes(spell.level);
+        })
         .filter((spell) => {
             return (
                 classesFilters.length === 0 ||
                 spell.classes.find((charClass) => classesFilters.includes(charClass.index))
             );
         });
+
+    /**
+     * Set sort value
+     */
+    $: searchParamSortValue = $page.url.searchParams.get(SPELL_SORT_KEY);
+    $: currentSortValue = isSpellSortValue(searchParamSortValue) ? searchParamSortValue : null;
+
+    /** @type {Record<typeof SPELL_SORT_VALUES[number], string>} */
+    const sortValueLabelDict = {
+        level: "Level",
+        name: "Name",
+    };
+
+    /**
+     * Sorted and filtered spell list
+     * @type typeof filteredSpells
+     */
+    let filteredAndSortedSpells = [];
+    $: switch (currentSortValue) {
+        case null: {
+            filteredAndSortedSpells = filteredSpells;
+            break;
+        }
+        case "name": {
+            filteredAndSortedSpells = filteredSpells.sort((spell_a, spell_b) => {
+                return spell_a.name.localeCompare(spell_b.name);
+            });
+            break;
+        }
+        case "level": {
+            filteredAndSortedSpells = filteredSpells.sort((spell_a, spell_b) => {
+                return spell_a.level - spell_b.level;
+            });
+            break;
+        }
+        default: {
+            assertUnreachable(currentSortValue);
+        }
+    }
 
     $: selectedSpell = data.spells.find((spell) => {
         return spell.index === $page.url.searchParams.get(SPELL_SELECTED_FILTER_KEY);
@@ -87,7 +147,7 @@
 
             <button
                 type="button"
-                class="md:hidden text-md font-semibold flex items-center justify-start gap-2"
+                class="md:hidden text-md font-semibold flex w-full items-center justify-start gap-2"
                 on:click={() => (areFiltersOpen = !areFiltersOpen)}
             >
                 {#if areFiltersOpen}
@@ -175,21 +235,24 @@
 
             <ul class="list-none m-0 p-0 flex gap-2 flex-wrap">
                 {#each classIndices as classIndex}
-                    {@const name = /** @type {Record<string, { name: string }>} */ (data.classes)[
-                        classIndex
-                    ].name}
-                    <li>
-                        <button
-                            type="button"
-                            class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
-                            class:!bg-[var(--color-primary)]={classesFilters.includes(classIndex)}
-                            on:click={() => {
-                                setClassFilter($page.url.toString(), classIndex);
-                            }}
-                        >
-                            {name}
-                        </button>
-                    </li>
+                    {@const name = data.classes[classIndex].name}
+
+                    {#if isClass(classIndex)}
+                        <li>
+                            <button
+                                type="button"
+                                class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
+                                class:!bg-[var(--color-primary)]={classesFilters.includes(
+                                    classIndex
+                                )}
+                                on:click={() => {
+                                    setClassFilter($page.url.toString(), classIndex);
+                                }}
+                            >
+                                {name}
+                            </button>
+                        </li>
+                    {/if}
                 {/each}
             </ul>
         </div>
@@ -201,12 +264,12 @@
             class="bg-[var(--color-background)] sticky top-0 z-10 rounded-br-lg rounded-bl-lg border-b-2 border-[var(--color-background)] border-solid"
         >
             <div
-                class="bg-[#121011] flex justify-between items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516]"
+                class="bg-[#121011] flex justify-between gap-4 items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516]"
             >
                 <div class="flex flex-1 items-center gap-4">
                     <input
                         type="text"
-                        class="bg-[#fff]/[0.06] rounded-md p-2 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
+                        class="bg-[#fff]/[0.06] rounded-md py-2 px-3 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
                         placeholder="Search by name"
                         value={searchInputFilter}
                         on:input={(event) => {
@@ -220,12 +283,40 @@
                     />
                 </div>
 
-                <div class="flex-1 flex justify-end">
+                <div class="flex-1 flex justify-end gap-4 items-center">
                     <div>
                         Filtered spells:
+
                         <span class="text-[var(--color-accent)]">
-                            {filteredSpells.length}
+                            {filteredAndSortedSpells.length}
                         </span>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        Sorted by:
+
+                        <CustomSelect
+                            id="sort-select"
+                            options={[
+                                { label: "---", value: "" },
+                                ...SPELL_SORT_VALUES.map((value) => ({
+                                    label: sortValueLabelDict[value],
+                                    value,
+                                })),
+                            ]}
+                            selectedValue={currentSortValue || ""}
+                            on:change={(event) => {
+                                const url = new URL($page.url);
+
+                                if (event.detail.value === "") {
+                                    url.searchParams.delete(SPELL_SORT_KEY);
+                                } else {
+                                    url.searchParams.set(SPELL_SORT_KEY, event.detail.value);
+                                }
+
+                                goto(url);
+                            }}
+                        />
                     </div>
                 </div>
             </div>
@@ -234,7 +325,7 @@
         <ul
             class="list-none p-0 m-0 grid auto-rows-max grid-cols-[repeat(auto-fill,minmax(20rem,auto))] gap-4"
         >
-            {#each filteredSpells as spell}
+            {#each filteredAndSortedSpells as spell}
                 <li>
                     <a
                         href={getSpellDialogUrl(spell.index)}
