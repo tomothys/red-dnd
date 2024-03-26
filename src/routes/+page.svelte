@@ -336,8 +336,10 @@
                             class="h-full aspect-square bg-[var(--color-school)] rounded-md flex items-center"
                         ></div>
 
-                        <div class="flex-1 text-left">
-                            <h2 class="font-bold">{spell.name}</h2>
+                        <div class="flex-1 text-left overflow-hidden">
+                            <h2 class="font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                                {spell.name}
+                            </h2>
 
                             <div>
                                 <div class="text-xs text-[var(--color-accent)]">
