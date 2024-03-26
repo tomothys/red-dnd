@@ -264,12 +264,12 @@
             class="bg-[var(--color-background)] sticky top-0 z-10 rounded-br-lg rounded-bl-lg border-b-2 border-[var(--color-background)] border-solid"
         >
             <div
-                class="bg-[#121011] flex justify-between gap-4 items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516]"
+                class="bg-[#121011] flex flex-col lg:flex-row justify-between gap-4 lg:items-center py-4 px-6 rounded-lg text-sm hover:bg-[#171516]"
             >
                 <div class="flex flex-1 items-center gap-4">
                     <input
                         type="text"
-                        class="bg-[#fff]/[0.06] rounded-md py-2 px-3 w-full max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
+                        class="bg-[#fff]/[0.06] rounded-md py-2 px-3 w-full lg:max-w-[18rem] hover:bg-[#fff]/[0.08] placeholder:italic placeholder:text-[#fff]/[0.1] hover:shadow-inner focus-within:outline-none"
                         placeholder="Search by name"
                         value={searchInputFilter}
                         on:input={(event) => {

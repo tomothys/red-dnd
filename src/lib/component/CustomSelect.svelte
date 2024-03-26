@@ -16,14 +16,14 @@
 
 <div
     class="
+        rounded-md
+        bg-[#fff]/[0.06]
         custom-select
         inline-grid
         gap-1
-        bg-[#fff]/[0.06]
-        rounded-md
-        hover:bg-[#fff]/[0.08]
         grid-cols-1
         grid-rows-1
+        hover:bg-[#fff]/[0.08]
     "
 >
     <div
@@ -41,6 +41,7 @@
             row-start-1
             row-end-2
             justify-between
+            whitespace-nowrap
         "
     >
         <span>{getLabel(selectedValue)}</span>
