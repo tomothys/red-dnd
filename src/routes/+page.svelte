@@ -147,7 +147,7 @@
 
             <button
                 type="button"
-                class="md:hidden text-md font-semibold flex w-full items-center justify-start gap-2"
+                class="md:hidden text-md font-semibold flex flex-1 items-center justify-start gap-2"
                 on:click={() => (areFiltersOpen = !areFiltersOpen)}
             >
                 {#if areFiltersOpen}
@@ -160,10 +160,10 @@
             </button>
 
             {#if showClearFilterButton}
-                <span>
+                <span class="flex-0">
                     <a
                         href="/"
-                        class="px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
+                        class="whitespace-nowrap px-2 py-1 rounded-md text-xs bg-[#fff]/[0.1] transition-transform hover:-translate-y-1 hover:bg-[#fff]/[0.2]"
                     >
                         Clear filters
                     </a>
