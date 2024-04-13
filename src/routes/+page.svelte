@@ -44,7 +44,6 @@
      * @type Array<import("$lib/data/classes").Class>
      */
     let classIndices = [];
-    $: console.log("classIndices", classIndices);
     $: {
         classIndices = /** @type Array<import("$lib/data/classes").Class> */ (
             [
@@ -385,7 +384,15 @@
                         class="w-4 aspect-square bg-[var(--color-school)] rounded-sm"
                     ></div>
 
-                    <h1 class="font-semibold">{selectedSpell.name}</h1>
+                    <h1 class="font-semibold">
+                        {selectedSpell.name}
+
+                        {#if selectedSpell.concentration}
+                            <span class="text-xs font-normal ml-2 text-[var(--color-accent)]"
+                                >(Concentration)</span
+                            >
+                        {/if}
+                    </h1>
                 </div>
 
                 <button
